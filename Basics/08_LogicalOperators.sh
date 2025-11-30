@@ -4,7 +4,10 @@
 # Bash has no way support direct type assignment for variables. it only handles strings and integers. you can work around this using flags
 # such as a=true, a="true" or a=0 
 
-# and, both must be true
+# && and, both must be true
+# || or, at least one true
+# ! not, invert the result.
+
 a="true"
 b="false"
 [[ $a && $b ]]
@@ -33,3 +36,23 @@ else
   echo "You can't drive in highway :("
 fi
 
+username="guess"
+age=25
+verified="no"
+
+if [[ $username = "admin" || ($age -ge 18 && $verified = "yes") ]]; then
+  echo "Access grantend"
+else
+  echo "Access denied"
+fi
+
+
+if [[ !$verified = "yes" ]]; then 
+  echo "Verification required"
+fi
+
+if [[ !$username = "guess" || $age -gt 21 ]]; then
+  echo "Proceed"
+else
+  echo "Denied"
+fi
