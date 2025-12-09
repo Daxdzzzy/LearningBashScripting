@@ -116,4 +116,13 @@ echo "${colours[@]}"
 declare -A countries
 countries[Colombia]="spanish"
 countries[United States]="english"
+countries[Mexico]="spanish"
 
+echo ${countries[Colombia]}
+echo ${countries[@]}  # All values
+echo ${!countries[@]} # All keys
+echo ${#countries[@]} # Count
+
+unset countries[Mexico] # Remove key
+
+echo ${#countries[@]} # Count
