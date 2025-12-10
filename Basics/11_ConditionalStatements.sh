@@ -38,4 +38,3 @@ if [ $number -gt 0 ]; then
     echo "the number is less then three"
   fi
 fi
-
